@@ -2,9 +2,9 @@ import requests
 import random
 import ipaddress
 import json
-from color import Color  # Assumes color.py exists
+from color import Color
 
-# Load config from a Python-formatted key.txt file
+
 def load_config_from_file(filepath):
     context = {}
     with open(filepath, "r") as f:
@@ -12,7 +12,7 @@ def load_config_from_file(filepath):
         exec(code, context)
     return context
 
-# Generate a random realistic User-Agent string
+
 def generate_random_user_agent():
     platforms = [
         "Windows NT 10.0; Win64; x64",
@@ -29,7 +29,7 @@ def generate_random_user_agent():
     ]
     return random.choice(browsers)()
 
-# Validate IP address (IPv4 or IPv6)
+
 def is_valid_ip(ip):
     try:
         ipaddress.ip_address(ip)
@@ -37,7 +37,6 @@ def is_valid_ip(ip):
     except ValueError:
         return False
 
-# Query ipdata.co API for IP info
 def get_ip_data(ip, api_key):
     if not is_valid_ip(ip):
         print(f"{Color.RED}[!] Invalid IP address format{Color.RESET}")
