@@ -1,6 +1,3 @@
-### ✅ `README.md`
-
-````markdown
 # IP Info Checker
 
 A simple Python tool to fetch IP address information using the [ipdata.co](https://ipdata.co) API.  
